@@ -8,6 +8,8 @@
 
 #import <ScreenSaver/ScreenSaver.h>
 
-@interface cat_gif_saverView : ScreenSaverView
+@interface cat_gif_saverView : ScreenSaverView {
+    NSImage *image;
+}
 
 @end

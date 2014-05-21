@@ -12,14 +12,6 @@
 
 - (id)initWithFrame:(NSRect)frame isPreview:(BOOL)isPreview
 {
-    NSURL *url = [NSURL URLWithString:@"http://giphy.com/embed/7z2oyDXIMEs8w"];
-    NSImage *image = [[NSImage alloc] initWithContentsOfURL:url];
-    
-    NSImageView *imgView = [NSImageView alloc];
-    imgView.image = image;
-    
-   [self addSubview:imgView];
-    
     self = [super initWithFrame:frame isPreview:isPreview];
     if (self) {
         [self setAnimationTimeInterval:1/30.0];
@@ -29,6 +21,9 @@
 
 - (void)startAnimation
 {
+    NSURL *url = [NSURL URLWithString:@"http://giphy.com/embed/7z2oyDXIMEs8w"];
+    image = [[NSImage alloc] initWithContentsOfURL:url];
+    
     [super startAnimation];
 }
 
@@ -39,11 +34,13 @@
 
 - (void)drawRect:(NSRect)rect
 {
+    [image drawInRect:rect];
     [super drawRect:rect];
 }
 
 - (void)animateOneFrame
 {
+    [self setNeedsDisplay:YES];
     return;
 }
 
