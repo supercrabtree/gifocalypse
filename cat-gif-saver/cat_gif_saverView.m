@@ -12,7 +12,14 @@
 
 - (id)initWithFrame:(NSRect)frame isPreview:(BOOL)isPreview
 {
-    NSLog(@"George");
+    NSURL *url = [NSURL URLWithString:@"http://giphy.com/embed/7z2oyDXIMEs8w"];
+    NSImage *image = [[NSImage alloc] initWithContentsOfURL:url];
+    
+    NSImageView *imgView = [NSImageView alloc];
+    imgView.image = image;
+    
+   [self addSubview:imgView];
+    
     self = [super initWithFrame:frame isPreview:isPreview];
     if (self) {
         [self setAnimationTimeInterval:1/30.0];
@@ -22,9 +29,6 @@
 
 - (void)startAnimation
 {
-    NSURL *imageURL = [NSURL URLWithString:@"http://giphy.com/embed/7z2oyDXIMEs8w"];
-    NSImage *image = [[NSImage alloc] initWithContentsOfURL:imageURL];
-    NSLog(@"size %f %f",image.size.width, image.size.height);
     [super startAnimation];
 }
 
@@ -35,27 +39,11 @@
 
 - (void)drawRect:(NSRect)rect
 {
-//    [super drawRect:rect];
+    [super drawRect:rect];
 }
 
 - (void)animateOneFrame
 {
-//    NSImage *image;
-//    NSRect myRect;
-//    NSSize mySize;
-//    
-//    image = [[NSImage imageNamed:@"mypict.jpg"] copy];
-//    
-//    mySize = [image size];
-//    
-//    myRect.origin.x = 0;
-//    myRect.origin.y = 0;
-//    myRect.size = mySize;
-//    
-//    [image lockFocus];
-//    [image drawInRect:[self bounds] fromRect:myRect
-//            operation:NSCompositeCopy fraction:0.5];
-//    [image unlockFocus];
     return;
 }
 
