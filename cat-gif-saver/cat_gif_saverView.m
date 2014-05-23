@@ -18,6 +18,8 @@
     }
     NSURL *url = [NSURL URLWithString:@"http://media0.giphy.com/media/QBtzAnMFO5i9O/giphy.gif"];
     image = [[NSImage alloc] initWithContentsOfURL:url];
+    NSSize newSize = [self bounds].size;
+    [image setSize:newSize];
     imageView = [[NSImageView alloc] initWithFrame:[self bounds]];
     [imageView setImage:image];
     [imageView setAnimates:true];
