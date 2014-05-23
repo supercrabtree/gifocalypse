@@ -16,14 +16,18 @@
     if (self) {
         [self setAnimationTimeInterval:1/30.0];
     }
+    NSURL *url = [NSURL URLWithString:@"http://media0.giphy.com/media/QBtzAnMFO5i9O/giphy.gif"];
+    image = [[NSImage alloc] initWithContentsOfURL:url];
+    imageView = [[NSImageView alloc] initWithFrame:[self bounds]];
+    [imageView setImage:image];
+    [imageView setAnimates:true];
+    [self addSubview:imageView];
     return self;
 }
 
 - (void)startAnimation
 {
     [super startAnimation];
-    NSURL *url = [NSURL URLWithString:@"http://giphy.com/embed/7z2oyDXIMEs8w"];
-    image = [[NSImage alloc] initWithContentsOfURL:url];
 }
 
 - (void)stopAnimation
@@ -33,18 +37,11 @@
 
 - (void)drawRect:(NSRect)rect
 {
-    NSRect imageRect;
-    imageRect.origin = NSZeroPoint;
-    imageRect.size = [image size];
-    NSRect drawingRect = imageRect;
-    [image drawInRect:drawingRect fromRect:imageRect operation:NSCompositeSourceOver fraction:1];
-    [image drawInRect:rect];
-    [super drawRect:rect];
+   [super drawRect:rect];
 }
 
 - (void)animateOneFrame
 {
-    [self setNeedsDisplay:YES];
     return;
 }
 
