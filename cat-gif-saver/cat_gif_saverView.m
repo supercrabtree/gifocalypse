@@ -4,7 +4,7 @@
 //
 //  Created by George Crabtree on 21/05/2014.
 //  Copyright (c) 2014 George Crabtree. All rights reserved.
-//  data
+//
 
 #import "cat_gif_saverView.h"
 

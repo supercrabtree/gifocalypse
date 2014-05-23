@@ -11,7 +11,6 @@
 		54BF86BB192C26CF007770F1 /* ScreenSaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54BF86BA192C26CF007770F1 /* ScreenSaver.framework */; };
 		54BF86C5192C26CF007770F1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 54BF86C3192C26CF007770F1 /* InfoPlist.strings */; };
 		54BF86C9192C26CF007770F1 /* cat_gif_saverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 54BF86C8192C26CF007770F1 /* cat_gif_saverView.m */; };
-		54EC5EC4192DF06A008510D0 /* image1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 54EC5EC3192DF06A008510D0 /* image1.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,7 +25,6 @@
 		54BF86C6192C26CF007770F1 /* cat-gif-saver-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "cat-gif-saver-Prefix.pch"; sourceTree = "<group>"; };
 		54BF86C7192C26CF007770F1 /* cat_gif_saverView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cat_gif_saverView.h; sourceTree = "<group>"; };
 		54BF86C8192C26CF007770F1 /* cat_gif_saverView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = cat_gif_saverView.m; sourceTree = "<group>"; };
-		54EC5EC3192DF06A008510D0 /* image1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = image1.gif; path = ../../../Desktop/image1.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,7 +90,6 @@
 		54BF86C1192C26CF007770F1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				54EC5EC3192DF06A008510D0 /* image1.gif */,
 				54BF86C2192C26CF007770F1 /* cat-gif-saver-Info.plist */,
 				54BF86C3192C26CF007770F1 /* InfoPlist.strings */,
 				54BF86C6192C26CF007770F1 /* cat-gif-saver-Prefix.pch */,
@@ -163,7 +160,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54EC5EC4192DF06A008510D0 /* image1.gif in Resources */,
 				54BF86C5192C26CF007770F1 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
