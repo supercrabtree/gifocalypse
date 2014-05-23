@@ -14,17 +14,33 @@
 {
     self = [super initWithFrame:frame isPreview:isPreview];
     if (self) {
-        [self setAnimationTimeInterval:1/30.0];
+        [self setAnimationTimeInterval:10];
     }
-    NSURL *url = [NSURL URLWithString:@"http://media0.giphy.com/media/QBtzAnMFO5i9O/giphy.gif"];
-    image = [[NSImage alloc] initWithContentsOfURL:url];
-    NSSize newSize = [self bounds].size;
-    [image setSize:newSize];
     imageView = [[NSImageView alloc] initWithFrame:[self bounds]];
-    [imageView setImage:image];
+    fullscreen = [self bounds].size;
+    
     [imageView setAnimates:true];
     [self addSubview:imageView];
     return self;
+}
+
+- (void)changeImage
+{
+    NSURL *url;
+    if (drand48() < 0.5) {
+        url = [NSURL URLWithString:@"http://media0.giphy.com/media/7z2oyDXIMEs8w/giphy.gif"];
+    } else  {
+        url = [NSURL URLWithString:@"http://media0.giphy.com/media/QBtzAnMFO5i9O/giphy.gif"];
+    }
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+        NSImage *newImage = [[NSImage alloc] initWithContentsOfURL:url];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [newImage setSize:fullscreen];
+            [imageView setImage:newImage];
+        });
+    });
 }
 
 - (void)startAnimation
@@ -44,6 +60,7 @@
 
 - (void)animateOneFrame
 {
+    [self changeImage];
     return;
 }
 

@@ -11,6 +11,7 @@
 @interface cat_gif_saverView : ScreenSaverView {
     NSImage *image;
     NSImageView *imageView;
+    NSSize fullscreen;
 }
 
 @end
