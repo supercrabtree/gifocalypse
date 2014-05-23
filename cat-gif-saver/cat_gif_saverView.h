@@ -12,6 +12,8 @@
     NSImage *image;
     NSImageView *imageView;
     NSSize fullscreen;
+    NSMutableData *_responseData;
+    NSArray *gifURLs;
 }
 
 @end

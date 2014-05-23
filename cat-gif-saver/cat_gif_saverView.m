@@ -4,7 +4,7 @@
 //
 //  Created by George Crabtree on 21/05/2014.
 //  Copyright (c) 2014 George Crabtree. All rights reserved.
-//  http://giphy.com/embed/7z2oyDXIMEs8w
+//  data
 
 #import "cat_gif_saverView.h"
 
@@ -14,8 +14,11 @@
 {
     self = [super initWithFrame:frame isPreview:isPreview];
     if (self) {
-        [self setAnimationTimeInterval:10];
+        [self setAnimationTimeInterval:6];
     }
+    NSString *giphyURL = @"http://api.giphy.com/v1/gifs/search?q=cat&limit=100&api_key=dc6zaTOxFJmzC";
+    NSData *resp = [self makeRestAPICall: giphyURL];
+    gifURLs = [self extractGIFURLs:resp];
     imageView = [[NSImageView alloc] initWithFrame:[self bounds]];
     fullscreen = [self bounds].size;
     
@@ -26,13 +29,7 @@
 
 - (void)changeImage
 {
-    NSURL *url;
-    if (drand48() < 0.5) {
-        url = [NSURL URLWithString:@"http://media0.giphy.com/media/7z2oyDXIMEs8w/giphy.gif"];
-    } else  {
-        url = [NSURL URLWithString:@"http://media0.giphy.com/media/QBtzAnMFO5i9O/giphy.gif"];
-    }
-    
+    NSURL *url = [NSURL URLWithString:[self getRandomGIFURL:gifURLs]];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
         NSImage *newImage = [[NSImage alloc] initWithContentsOfURL:url];
         
@@ -41,6 +38,33 @@
             [imageView setImage:newImage];
         });
     });
+}
+
+-(NSString*) getRandomGIFURL:(NSArray *) urls
+{
+    return [urls objectAtIndex:arc4random() % [urls count]];
+}
+-(NSMutableArray*) extractGIFURLs:(NSData *)response
+{
+    NSMutableArray* urls = [NSMutableArray array];
+    NSError *jsonParsingError = nil;
+    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:response options:0 error:&jsonParsingError];
+    
+    NSArray* data = [json objectForKey:@"data"];
+    
+    for(NSDictionary *item in data) {
+        [urls addObject:item[@"images"][@"original"][@"url"]];
+    }
+    return urls;
+}
+
+-(NSData*) makeRestAPICall : (NSString*) reqURLStr
+{
+    NSURLRequest *Request = [NSURLRequest requestWithURL:[NSURL URLWithString: reqURLStr]];
+    NSURLResponse *resp = nil;
+    NSError *error = nil;
+    NSData *response = [NSURLConnection sendSynchronousRequest: Request returningResponse: &resp error: &error];
+    return response;
 }
 
 - (void)startAnimation
