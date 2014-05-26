@@ -7,6 +7,7 @@
 //
 
 #import <ScreenSaver/ScreenSaver.h>
+#define kConfigSheetNIB @"ConfigureSheet"
 
 @interface GifocalypseView : ScreenSaverView
 {
@@ -15,7 +16,8 @@
     NSSize fullscreen;
     NSMutableData *_responseData;
     NSArray *gifURLs;
-    IBOutlet id configSheet;
+    IBOutlet NSWindow* configureSheet;
 }
-
+- (IBAction) cancelSheetAction: (id) sender;
+- (IBAction) okSheetAction: (id) sender;
 @end

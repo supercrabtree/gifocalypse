@@ -91,12 +91,23 @@
 
 - (BOOL)hasConfigureSheet
 {
-    return NO;
+    return YES;
 }
 
 - (NSWindow*)configureSheet
 {
-    return configSheet;
+    if ( configureSheet == nil ) {
+        [NSBundle loadNibNamed: kConfigSheetNIB owner: self];
+    }
+    return configureSheet;
+}
+- (IBAction) cancelSheetAction: (id) sender {
+    //  close the sheet without saving the settings
+    [NSApp endSheet: configureSheet];
+}
+- (IBAction) okSheetAction: (id) sender {
+    //  record the settings in the configuration sheet
+    [NSApp endSheet: configureSheet];
 }
 
 @end
