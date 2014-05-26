@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "54BF86B4192C26CE007770F1"
-               BuildableName = "cat-gif-saver.saver"
-               BlueprintName = "cat-gif-saver"
-               ReferencedContainer = "container:cat-gif-saver.xcodeproj">
+               BlueprintIdentifier = "546857AA1932FC4600D323E8"
+               BuildableName = "Gifocalypse.saver"
+               BlueprintName = "Gifocalypse"
+               ReferencedContainer = "container:Gifocalypse.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

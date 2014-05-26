@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:cat-gif-saver.xcodeproj">
+      location = "self:Gifocalypse.xcodeproj">
    </FileRef>
 </Workspace>

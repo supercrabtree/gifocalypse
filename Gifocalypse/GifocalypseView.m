@@ -1,29 +1,30 @@
 //
-//  cat_gif_saverView.m
-//  cat-gif-saver
+//  GifocalypseView.m
+//  Gifocalypse
 //
-//  Created by George Crabtree on 21/05/2014.
+//  Created by George Crabtree on 26/05/2014.
 //  Copyright (c) 2014 George Crabtree. All rights reserved.
 //
 
-#import "cat_gif_saverView.h"
+#import "GifocalypseView.h"
 
-@implementation cat_gif_saverView
+@implementation GifocalypseView
 
 - (id)initWithFrame:(NSRect)frame isPreview:(BOOL)isPreview
 {
     self = [super initWithFrame:frame isPreview:isPreview];
     if (self) {
+        //        NSString *giphyURL = @"http://api.giphy.com/v1/gifs/search?q=funny&limit=100&api_key=dc6zaTOxFJmzC";
+        NSString *giphyURL = @"http://api.giphy.com/v1/gifs/trending?limit=100&api_key=dc6zaTOxFJmzC";
+        NSData *resp = [self makeRestAPICall: giphyURL];
+        gifURLs = [self extractGIFURLs:resp];
+        imageView = [[NSImageView alloc] initWithFrame:[self bounds]];
+        fullscreen = [self bounds].size;
+        
+        [imageView setAnimates:true];
+        [self addSubview:imageView];
         [self setAnimationTimeInterval:6];
     }
-    NSString *giphyURL = @"http://api.giphy.com/v1/gifs/search?q=cat&limit=100&api_key=dc6zaTOxFJmzC";
-    NSData *resp = [self makeRestAPICall: giphyURL];
-    gifURLs = [self extractGIFURLs:resp];
-    imageView = [[NSImageView alloc] initWithFrame:[self bounds]];
-    fullscreen = [self bounds].size;
-    
-    [imageView setAnimates:true];
-    [self addSubview:imageView];
     return self;
 }
 
@@ -79,7 +80,7 @@
 
 - (void)drawRect:(NSRect)rect
 {
-   [super drawRect:rect];
+    [super drawRect:rect];
 }
 
 - (void)animateOneFrame
@@ -95,7 +96,7 @@
 
 - (NSWindow*)configureSheet
 {
-    return nil;
+    return configSheet;
 }
 
 @end

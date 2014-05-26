@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>cat-gif-saver.xcscheme</key>
+		<key>Gifocalypse.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,7 +12,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>54BF86B4192C26CE007770F1</key>
+		<key>546857AA1932FC4600D323E8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
