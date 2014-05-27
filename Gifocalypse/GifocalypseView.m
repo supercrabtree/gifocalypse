@@ -14,14 +14,38 @@
 {
     self = [super initWithFrame:frame isPreview:isPreview];
     if (self) {
-        //        NSString *giphyURL = @"http://api.giphy.com/v1/gifs/search?q=funny&limit=100&api_key=dc6zaTOxFJmzC";
-        NSString *giphyURL = @"http://api.giphy.com/v1/gifs/trending?limit=100&api_key=dc6zaTOxFJmzC";
+        // create a container for the giphy logo
+        NSImageView *giphyView = [[NSImageView alloc] initWithFrame:[self bounds]];
+        
+        // get a path for the giphy logo
+        NSString *giphyPath = [[NSBundle mainBundle] pathForResource:@"Giphy_API_Logo" ofType:@"gif"];
+        
+        // create the giphy logo image with the path from above
+        NSImage *giphyImage = [[NSImage alloc] initWithContentsOfFile:giphyPath];
+        
+        // set defaults for the giphy image
+        [giphyImage setSize:fullscreen];
+        [giphyView setAnimates:true];
+        [giphyView setImage:giphyImage];
+        
+        
+        // Load Gifs using giphy api
+        NSString *giphyURL = @"http://api.giphy.com/v1/gifs/search?q=funny+animal&limit=100&api_key=dc6zaTOxFJmzC";
+//        NSString *giphyURL = @"http://api.giphy.com/v1/gifs/trending?limit=100&api_key=dc6zaTOxFJmzC";
         NSData *resp = [self makeRestAPICall: giphyURL];
+        
+        // get just image urls
         gifURLs = [self extractGIFURLs:resp];
-        imageView = [[NSImageView alloc] initWithFrame:[self bounds]];
+        
+        // set a fullscreen size
         fullscreen = [self bounds].size;
         
+        // add the image view
+        imageView = [[NSImageView alloc] initWithFrame:[self bounds]];
         [imageView setAnimates:true];
+        
+        // add image views as subviews
+        [self addSubview:giphyView];
         [self addSubview:imageView];
         [self setAnimationTimeInterval:6];
     }
@@ -97,7 +121,7 @@
 - (NSWindow*)configureSheet
 {
     if ( configureSheet == nil ) {
-        [NSBundle loadNibNamed: kConfigSheetNIB owner: self];
+//        [NSBundle loadNibNamed: kConfigSheetNIB owner: self];
     }
     return configureSheet;
 }

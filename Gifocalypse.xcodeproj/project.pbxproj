@@ -14,6 +14,7 @@
 		546857BF1932FC4600D323E8 /* GifocalypseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 546857BE1932FC4600D323E8 /* GifocalypseView.m */; };
 		546857C71932FEE000D323E8 /* thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = 546857C51932FEE000D323E8 /* thumbnail.png */; };
 		546857C81932FEE000D323E8 /* thumbnail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 546857C61932FEE000D323E8 /* thumbnail@2x.png */; };
+		546D39C419349F350026F944 /* Giphy_API_Logo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 546D39C319349F350026F944 /* Giphy_API_Logo.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		546857BE1932FC4600D323E8 /* GifocalypseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GifocalypseView.m; sourceTree = "<group>"; };
 		546857C51932FEE000D323E8 /* thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = thumbnail.png; path = ../../Desktop/thumbnail.png; sourceTree = "<group>"; };
 		546857C61932FEE000D323E8 /* thumbnail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "thumbnail@2x.png"; path = "../../Desktop/thumbnail@2x.png"; sourceTree = "<group>"; };
+		546D39C319349F350026F944 /* Giphy_API_Logo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Giphy_API_Logo.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 		546857B61932FC4600D323E8 /* Gifocalypse */ = {
 			isa = PBXGroup;
 			children = (
+				546D39C319349F350026F944 /* Giphy_API_Logo.gif */,
 				546857BD1932FC4600D323E8 /* GifocalypseView.h */,
 				546857BE1932FC4600D323E8 /* GifocalypseView.m */,
 				54042A2119332963009B10EC /* Options.xib */,
@@ -171,6 +174,7 @@
 			files = (
 				54042A2219332963009B10EC /* Options.xib in Resources */,
 				546857C71932FEE000D323E8 /* thumbnail.png in Resources */,
+				546D39C419349F350026F944 /* Giphy_API_Logo.gif in Resources */,
 				546857BB1932FC4600D323E8 /* InfoPlist.strings in Resources */,
 				546857C81932FEE000D323E8 /* thumbnail@2x.png in Resources */,
 			);
