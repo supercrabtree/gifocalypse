@@ -30,7 +30,8 @@
         
         
         // Load Gifs using giphy api
-        NSString *giphyURL = @"http://api.giphy.com/v1/gifs/search?q=funny+animal&limit=100&api_key=dc6zaTOxFJmzC";
+        NSString *giphyURL = @"http://api.giphy.com/v1/gifs/search?q=fail&limit=100&api_key=dc6zaTOxFJmzC";
+//        NSString *giphyURL = @"http://api.giphy.com/v1/gifs/search?q=funny+animal&limit=100&api_key=dc6zaTOxFJmzC";
 //        NSString *giphyURL = @"http://api.giphy.com/v1/gifs/trending?limit=100&api_key=dc6zaTOxFJmzC";
         NSData *resp = [self makeRestAPICall: giphyURL];
         
@@ -47,7 +48,7 @@
         // add image views as subviews
         [self addSubview:giphyView];
         [self addSubview:imageView];
-        [self setAnimationTimeInterval:6];
+        [self setAnimationTimeInterval:8.0];
     }
     return self;
 }
