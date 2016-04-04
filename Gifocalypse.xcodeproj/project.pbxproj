@@ -12,8 +12,6 @@
 		546857B11932FC4600D323E8 /* ScreenSaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 546857B01932FC4600D323E8 /* ScreenSaver.framework */; };
 		546857BB1932FC4600D323E8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 546857B91932FC4600D323E8 /* InfoPlist.strings */; };
 		546857BF1932FC4600D323E8 /* GifocalypseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 546857BE1932FC4600D323E8 /* GifocalypseView.m */; };
-		546857C71932FEE000D323E8 /* thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = 546857C51932FEE000D323E8 /* thumbnail.png */; };
-		546857C81932FEE000D323E8 /* thumbnail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 546857C61932FEE000D323E8 /* thumbnail@2x.png */; };
 		546D39C419349F350026F944 /* Giphy_API_Logo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 546D39C319349F350026F944 /* Giphy_API_Logo.gif */; };
 /* End PBXBuildFile section */
 
@@ -30,8 +28,6 @@
 		546857BC1932FC4600D323E8 /* Gifocalypse-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Gifocalypse-Prefix.pch"; sourceTree = "<group>"; };
 		546857BD1932FC4600D323E8 /* GifocalypseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GifocalypseView.h; sourceTree = "<group>"; };
 		546857BE1932FC4600D323E8 /* GifocalypseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GifocalypseView.m; sourceTree = "<group>"; };
-		546857C51932FEE000D323E8 /* thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = thumbnail.png; path = ../../Desktop/thumbnail.png; sourceTree = "<group>"; };
-		546857C61932FEE000D323E8 /* thumbnail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "thumbnail@2x.png"; path = "../../Desktop/thumbnail@2x.png"; sourceTree = "<group>"; };
 		546D39C319349F350026F944 /* Giphy_API_Logo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Giphy_API_Logo.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -51,8 +47,6 @@
 		546857A01932FC4600D323E8 = {
 			isa = PBXGroup;
 			children = (
-				546857C51932FEE000D323E8 /* thumbnail.png */,
-				546857C61932FEE000D323E8 /* thumbnail@2x.png */,
 				546857B61932FC4600D323E8 /* Gifocalypse */,
 				546857AD1932FC4600D323E8 /* Frameworks */,
 				546857AC1932FC4600D323E8 /* Products */,
@@ -147,7 +141,7 @@
 		546857A11932FC4600D323E8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "George Crabtree";
 			};
 			buildConfigurationList = 546857A41932FC4600D323E8 /* Build configuration list for PBXProject "Gifocalypse" */;
@@ -173,10 +167,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				54042A2219332963009B10EC /* Options.xib in Resources */,
-				546857C71932FEE000D323E8 /* thumbnail.png in Resources */,
 				546D39C419349F350026F944 /* Giphy_API_Logo.gif in Resources */,
 				546857BB1932FC4600D323E8 /* InfoPlist.strings in Resources */,
-				546857C81932FEE000D323E8 /* thumbnail@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,6 +223,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -291,6 +284,7 @@
 				GCC_PREFIX_HEADER = "Gifocalypse/Gifocalypse-Prefix.pch";
 				INFOPLIST_FILE = "Gifocalypse/Gifocalypse-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
+				PRODUCT_BUNDLE_IDENTIFIER = "sc.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = saver;
 			};
@@ -304,6 +298,7 @@
 				GCC_PREFIX_HEADER = "Gifocalypse/Gifocalypse-Prefix.pch";
 				INFOPLIST_FILE = "Gifocalypse/Gifocalypse-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
+				PRODUCT_BUNDLE_IDENTIFIER = "sc.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = saver;
 			};

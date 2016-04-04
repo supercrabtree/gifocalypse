@@ -30,7 +30,7 @@
         
         
         // Load Gifs using giphy api
-        NSString *giphyURL = @"http://api.giphy.com/v1/gifs/search?q=fail&limit=100&api_key=dc6zaTOxFJmzC";
+        NSString *giphyURL = @"http://api.giphy.com/v1/gifs/search?q=fail&limit=100&api_key=dc6zaTOxFJmzC&rating=pg-13";
 //        NSString *giphyURL = @"http://api.giphy.com/v1/gifs/search?q=funny+animal&limit=100&api_key=dc6zaTOxFJmzC";
 //        NSString *giphyURL = @"http://api.giphy.com/v1/gifs/trending?limit=100&api_key=dc6zaTOxFJmzC";
         NSData *resp = [self makeRestAPICall: giphyURL];
