@@ -1,4 +1,5 @@
-cat-git-saver
-=============
+#Gifocalypse
 
-A fullscreen cat gif screen saver
+I couldn't find a screen saver that played gifs in full screen. This was an
+absolute **must** for me.
+
